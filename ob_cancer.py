@@ -14,7 +14,7 @@ st.write('# Colorretal - Óbito por Câncer')
 st.write('### Insira os dados abaixo para fazer a predição')
 
 #dados dos usuários com a função
-def get_user_date():
+def get_user_data():
     col1, col2 = st.columns(2)
     escolari = col1.radio('Escolaridade', ['1 - Analfabeto', '2 - Ens. Fund. Incompleto', '3 - Ens. Fund. Completo', '4 - Ensino Médio', '5 - Superior'])
     if escolari == 'Analfabeto':
@@ -122,7 +122,7 @@ def test_preprocessing(df, enc, norm, encoder_type='LabelEncoder', pca=None):
 
     return df_aux
 
-feat = get_user_date()
+feat = get_user_data()
 
 with open('ob_cancer_models.pkl', 'rb') as f:
     models = pickle.load(f)
